@@ -1,0 +1,101 @@
+
+Agile software development
+Scrum and user stories
+
+Build the right thing; build the thing right
+
+
+
+	
+INVEST
+I 	Independent 	The PBI should be self-contained, in a way that there is no inherent dependency on another PBI.
+N 	Negotiable 	PBIs are not explicit contracts and should leave space for discussion.
+V 	Valuable 	A PBI must deliver value to the stakeholders.
+E 	Estimable 	You must always be able to estimate the size of a PBI.
+S 	Small 	PBIs should not be so big as to become impossible to plan/task/prioritize within a level of accuracy.
+T 	Testable 	The PBI or its related description must provide the necessary information to make test development possible. 
+
+capture business value
+
+https://en.wikipedia.org/wiki/Behavior-driven_development
+
+
+
+
+
+
+user story to SBE = gherkin
+
+Specification by example scenarios
+Given a user and the product in a certain situation
+When the user does something with the product
+Then the product responds in a certain way
+
+
+
+
+BDD
+BDD is a natural extension of TDD testing in general.
+The result is a closer relationship to acceptance criteria for a given function and the tests used to validate that functionality. 
+
+
+testing for trust in your product
+
+
+e2e testing
+End-to-end testing is a Software testing methodology to test an application flow from start to end. 
+The purpose of End to end testing is to simulate the real user scenario and validate the system under test 
+
+also works to structure your unit tests!
+
+regression testing
+	humans are expensive, error-prone, finicky unavailable
+
+so we let a computer do the scripts, 
+
+-------------
+
+building and testing websites
+
+Websites are visited by users using browsers, so we want our tests to do that as well.
+
+
+which means, our tests will:
+1. get a browser, (GIVEN)
+2. use it to visit the website as a person would, (WHEN)
+3. check the results afterwards, also in the browser. (THEN)
+
+
+Two known tools:
+
+selenium/webdriver
+	older (2007), so feature complete, with implementations in many languages and with plugins/tools built for additional features such as mobile browser integration, but not always performant
+
+
+puppeteer/playwright
+	newer (2019), so way less complete, e.g. mobile via emulation, but claims to be more performant and frontend developer friendly, JS/Node based
+
+
+
+Getting the browser:
+	both need to download a 'connector', playwright does this for you, but downloads a whole driver, which is modified.
+
+Using the browser:
+	both can do most of what you need, mind that your testscript runs in a different thread/process/application than the browser, which means all communication is async, so you'll be using async/await a lot in Javascript
+	
+Checking the browser:
+	mainly means testing the webpage for certain bits of content that are present and/or visible on the page, within a certain timeperiod. The time period is needed as the browser works over the internet, which takes time, clicks do not work instantly.
+
+
+what should you choose?
+
+use what makes a good fit for the most people in the project, and for the most sensible workflow.
+- who knows which tools, which programming languages?
+- what features are important to have proper test coverage?
+- what can be implemented in the development workflow? (DTAP)
+- how can you add 
+
+
+
+Lets get started!
+https://github.com/fvanderwielen/cucumber-test
