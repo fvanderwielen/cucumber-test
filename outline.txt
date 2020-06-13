@@ -97,5 +97,30 @@ use what makes a good fit for the most people in the project, and for the most s
 
 
 
+writing the webdriver code: async functions
+
+	all these actions go over the network, so they are asynchronous
+	
+	which means in the Javascript world, we need to work with this via promises
+	
+	lots-o-promises
+	
+	Luckily, something exists in modern JS (indeed no IE) like async/await, in which you declare a function to be asynchronous, so it can await promises inside of the main function body
+	
+
+basic things:
+	
+	loading a page, filling in a form, checking some elements/content on the page
+
+
+advanced things:
+
+	a11y testing via Axe
+	
+	visual testing via takeScreenshot and tooling around that
+	
+	
+
+
 Lets get started!
 https://github.com/fvanderwielen/cucumber-test
